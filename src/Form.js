@@ -7,7 +7,8 @@ class Form extends Component {
         this.initialState = {
             name: '',
             surname: '',
-            job: ''
+            job: '',
+            email: ''
         };
 
         this.state = this.initialState;
@@ -29,7 +30,7 @@ class Form extends Component {
     }
 
     render() {
-        const { name, surname, job } = this.state; 
+        const { name, surname, job, email} = this.state; 
 
         return (
             <form onSubmit={this.onFormSubmit}>
@@ -53,6 +54,13 @@ class Form extends Component {
                     name="job" 
                     id="job"
                     value={job} 
+                    onChange={this.handleChange} />
+                <label for="email">Почта</label>
+                <input 
+                    type="text" 
+                    name="email" 
+                    id="email"
+                    value={email} 
                     onChange={this.handleChange} />
                 <button type="submit">
                     Добавить
